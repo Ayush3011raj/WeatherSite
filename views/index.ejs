@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <style>
+        /* Set background gradient */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        /* Style for the top heading */
+        .head {
+            font-size: 2rem;
+            margin-bottom: 50px; /* Increase this value to add more space between heading and container */
+            text-align: center;
+        }
+
+        /* Center container and give it some style */
+        .container {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            margin-top: 20px; /* Ensure container isn't too close to the heading */
+        }
+
+        /* Style the title */
+        .weather {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        /* Style the input fields */
+        .input-text {
+            margin: 10px 0;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        .input-text::placeholder {
+            color: #888;
+        }
+
+        /* Style the submit button */
+        .btn-submit {
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add small footer section */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Top heading -->
+    <h1 class="head">Get the Most Accurate Weather Predictions!</h1>
+
+    <!-- Main container -->
+    <div class="container">
+        <h1 class="weather">Weather Info</h1>
+        <p>Enter your latitude and longitude to get the latest weather conditions.</p>
+
+        <!-- Weather form -->
+        <form action="/" method="POST">
+            <input type="text" name="latitude" placeholder="Enter Latitude" class="input-text" required>
+            <input type="text" name="longitude" placeholder="Enter Longitude" class="input-text" required>
+            <button type="submit" class="btn-submit">Get Weather</button>
+        </form>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <p>Powered by WeatherAPI</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <style>
+        /* Body style with gradient background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Weather container styling */
+        .weather-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+        }
+
+        /* City and country styling */
+        .location {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Main temperature display */
+        .temperature {
+            font-size: 3.5rem;
+            margin: 20px 0;
+        }
+
+        /* Weather condition display */
+        .condition {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Additional weather details styling */
+        .details {
+            text-align: left;
+        }
+
+        .details p {
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        /* Style the icons */
+        .icon {
+            display: block;
+            margin: 0 auto;
+            width: 64px;
+            height: 64px;
+        }
+
+        /* Footer style */
+        footer {
+            position: fixed;
+            margin-top: 600px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="weather-container">
+        <!-- Display location (city and country) -->
+        <h1 class="location"><%= city %>, <%= country %></h1>
+
+        <!-- Display weather condition icon and text -->
+        <div class="condition">
+            
+            <%= condition %>
+        </div>
+
+        <!-- Display main temperature -->
+        <div class="temperature">
+            <%= temp %>°C
+        </div>
+
+        <!-- Additional details like humidity, precipitation, and feels-like temperature -->
+        <div class="details">
+            <p><strong>Feels like:</strong> <%= feelsliketemp %>°C</p>
+            <p><strong>Humidity:</strong> <%= humidity %>%</p>
+            <p><strong>Precipitation:</strong> <%= precp %> mm</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Powered by WeatherAPI</p>
+    </footer>
+
+</body>
+
+</html>
